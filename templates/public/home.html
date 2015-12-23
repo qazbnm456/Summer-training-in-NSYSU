@@ -1,0 +1,31 @@
+{% extends "../main.html" %}
+
+{% block title %}NSYSU CTF{% end %}
+
+{% block content %}
+    <style>
+        .videoInsert {
+            position: absolute; 
+            right: 0; 
+            bottom: 0;
+            top: -44px;
+            min-width: 100%; 
+            min-height: 100%;
+            width: auto; 
+            height: auto; 
+            z-index: -100;
+            background-size: cover;
+            overflow: hidden;
+        }
+    </style>
+
+    <div style="width: 1240px; height: 520px;">
+        <a class="btn btn-primary btn-large" href="/registration">
+            Register &raquo;
+        </a>
+        <video class="videoInsert" autoplay controls>
+            <source src="/static/The_Final_Countdown.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+{% end %}

@@ -1,0 +1,323 @@
+{% extends "../main.html" %}
+
+{% block title %} Slides {% end %}
+
+{% block head %}
+    <script src="/static/js/libs/gistfile1.js" type="text/javascript"></script>
+{% end %}
+
+{% block content %}
+    <div class="container">
+        <h1>
+            <i class="fa fa-info-circle"></i>
+            Slides
+        </h1>
+        <br />
+        <div class="well">
+          <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+              <li><a href="#w1" data-toggle="tab">Week 1</a></li>
+              <li><a href="#w2" data-toggle="tab">Week 2</a></li>
+              <li><a href="#w3" data-toggle="tab">Week 3</a></li>
+              <li><a href="#w4" data-toggle="tab">Week 4</a></li>
+              <li><a href="#w5" data-toggle="tab">Week 5</a></li>
+              <li><a href="#w6" data-toggle="tab">Week 6</a></li>
+              <li><a href="#a1" data-toggle="tab">Appendix I</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane" id="w1">
+                <div class="accordion" id="w1-accordion">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w1-accordion" href="#w1-collapseOne">
+                        [week 1-1] COMPUTER SECURITY
+                      </a>
+                    </div>
+                    <div id="w1-collapseOne" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w1/index.html"><p>COMPUTER SECURITY</p></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w1-accordion" href="#w1-collapseTwo">
+                        [week 1-2] x86 Linux Programming
+                      </a>
+                    </div>
+                    <div id="w1-collapseTwo" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w2/index.html">x86 Linux Programming</a></br>
+                        <hr color="#000000" size="3" >
+                        <a href="files/lab01/lab1C">lab1C</a>
+                        <a href="files/lab01/lab1B">lab1B</a>
+                        <a href="files/lab01/lab1A">lab1A</a></br>
+                          $ ssh lab1C@1.172.234.174</br>
+                          lab1C@1.172.234.174's password: lab01start</br>
+                          $ cd /levels/lab01</br>
+                          $ cat /home/lab1B/.pass</br>
+                        <a href="files/hw1_r3v-1d70158e81d82d3b9f2a875747911630">hw1</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="w2">
+                <div class="accordion" id="w2-accordion">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w2-accordion" href="#w2-collapseOne">
+                        [week 2-1] Exploit the Vulnerability
+                      </a>
+                    </div>
+                    <div id="w2-collapseOne" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w3/index.html">Exploit the Vulnerability</a></br>
+                        <hr color="#000000" size="3" >
+                        <a href="files/lab02/lab2C">lab2C</a>
+                        <a href="files/lab02/lab2B">lab2B</a>
+                        <a href="files/lab02/lab2A">lab2A</a></br>
+                        <a href="files/lab02/lab2C.c">lab2C.c</a>
+                        <a href="files/lab02/lab2B.c">lab2B.c</a>
+                        <a href="files/lab02/lab2A.c">lab2A.c</a></br>
+                          $ ssh lab2C@1.172.234.174</br>
+                          lab2C@1.172.234.174's password: lab02start</br>
+                          $ cd /levels/lab02</br>
+                          $ cat /home/lab2B/.pass</br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w2-accordion" href="#w2-collapseTwo">
+                        [week 2-2-1] Format String Vulnerability
+                      </a>
+                    </div>
+                    <div id="w2-collapseTwo" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w4/format-string.html">Format String Vulnerability</a></br>
+                        <hr color="#000000" size="3" >
+                        <a href="files/lab04/lab4C">lab4C</a>
+                        <a href="files/lab04/lab4B">lab4B</a>
+                        <a href="files/lab04/lab4A">lab4A</a></br>
+                        <a href="files/lab04/lab4C.c">lab4C.c</a>
+                        <a href="files/lab04/lab4B.c">lab4B.c</a>
+                        <a href="files/lab04/lab4A.c">lab4A.c</a></br>
+                          $ ssh lab4C@1.172.234.174</br>
+                          lab4C@1.172.234.174's password: lab04start</br>
+                          $ cd /levels/lab04</br>
+                          $ cat /home/lab4B/.pass</br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w2-accordion" href="#w2-collapseThree">
+                        [week 2-2-2] Return Oriented Programming
+                      </a>
+                    </div>
+                    <div id="w2-collapseThree" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w4/rop.html">Return Oriented Programming</a></br>
+                        <hr color="#000000" size="3" >
+                        <a href="files/lab05/lab5C">lab5C</a>
+                        <a href="files/lab05/lab5B">lab5B</a>
+                        <a href="files/lab05/lab5A">lab5A</a></br>
+                        <a href="files/lab05/lab5C.c">lab5C.c</a>
+                        <a href="files/lab05/lab5B.c">lab5B.c</a>
+                        <a href="files/lab05/lab5A.c">lab5A.c</a></br>
+                          $ ssh lab5C@1.172.234.174</br>
+                          lab5C@1.172.234.174's password: lab05start</br>
+                          $ cd /levels/lab05</br>
+                          $ cat /home/lab5B/.pass</br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="w3">
+                <div class="accordion" id="w3-accordion">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w3-accordion" href="#w3-collapseOne">
+                        [week 3-1] Exploit Writing
+                      </a>
+                    </div>
+                    <div id="w3-collapseOne" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w5/exp.html">Exploit Writing</a></br>
+                        <hr color="#000000" size="3" >
+                        <a href="files/lab03/lab3C">lab3C</a>
+                        <a href="files/lab03/lab3B">lab3B</a>
+                        <a href="files/lab03/lab3A">lab3A</a></br>
+                        <a href="files/lab03/lab3C.c">lab3C.c</a>
+                        <a href="files/lab03/lab3B.c">lab3B.c</a>
+                        <a href="files/lab03/lab3A.c">lab3A.c</a></br>
+                          $ ssh lab3C@1.172.234.174</br>
+                          lab3C@1.172.234.174's password: lab03start</br>
+                          $ cd /levels/lab03</br>
+                          $ cat /home/lab3B/.pass</br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w3-accordion" href="#w3-collapseTwo">
+                        [week 3-2] 稍微進階一點點的 Web Security
+                      </a>
+                    </div>
+                    <div id="w3-collapseTwo" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w6/slides.pdf">稍微進階一點點的 Web Security</a></br>
+                        <hr color="#000000" size="3" >
+                        <a href="http://aecs.me/wargame/web/level3">web3</a></br>
+                        <a href="http://aecs.me/wargame/web/level4">web4</a></br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="w4">
+                <div class="accordion" id="w4-accordion">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w4-accordion" href="#w4-collapseOne">
+                        [week 4-1] SQL Injection Workshop
+                      </a>
+                    </div>
+                    <div id="w4-collapseOne" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w7/sql.pdf">SQL Injection Workshop</a></br>
+                        <hr color="#000000" size="3" >
+                        <a href="http://aecs.me/wargame/web/level3">web3</a></br>
+                        <a href="http://aecs.me/wargame/web/level4">web4</a></br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w4-accordion" href="#w4-collapseTwo">
+                        [week 4-2] Bypassing WAF
+                      </a>
+                    </div>
+                    <div id="w4-collapseTwo" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w8/waf_bypass.pdf">Bypassing WAF</a></br>
+                        <hr color="#000000" size="3" >
+                        <a href="http://aecs.me/wargame/web/level3">web3</a></br>
+                        <a href="http://aecs.me/wargame/web/level4">web4</a></br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="w5">
+                <div class="accordion" id="w5-accordion">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w5-accordion" href="#w5-collapseOne">
+                        [week 5-1-1] Crypto in CTF
+                      </a>
+                    </div>
+                    <div id="w5-collapseOne" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w9/index.html">Crypto in CTF</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w5-accordion" href="#w5-collapseTwo">
+                        [week 5-1-2] Crypto in CTF - 2
+                      </a>
+                    </div>
+                    <div id="w5-collapseTwo" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w10/crypto2.html">Crypto in CTF - 2</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w5-accordion" href="#w5-collapseThree">
+                        [week 5-1-3] Crypto in CTF - 3
+                      </a>
+                    </div>
+                    <div id="w5-collapseThree" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w10/crypto3.html">Crypto in CTF - 3</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w5-accordion" href="#w5-collapseFour">
+                        [week 5-2] 矛盾大對決
+                      </a>
+                    </div>
+                    <div id="w5-collapseFour" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="http://blog.orange.tw/2013/10/phpconf-2013.html">PHPConf 2013 投影片 - 矛盾大對決！</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="w6">
+                <div class="accordion" id="a1-accordion">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w6-accordion" href="#w6-collapseOne">
+                        [week 6-1] Pwn & x86-64 & ARM
+                      </a>
+                    </div>
+                    <div id="w6-collapseOne" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w11/index.html">Pwn & x86-64 & ARM</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#w6-accordion" href="#w6-collapseTwo">
+                        [week 6-2] Defense in CTF
+                      </a>
+                    </div>
+                    <div id="w6-collapseTwo" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/w12/bp.html">Defense in CTF</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="a1">
+                <div class="accordion" id="a1-accordion">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#a1-accordion" href="#a1-collapseOne">
+                        [Appendix I] Break the Heap
+                      </a>
+                    </div>
+                    <div id="a1-collapseOne" class="accordion-body collapse">
+                      <div style="background:none;background-color:lightgray;" class="accordion-inner">
+                        <a href="slides/appendix1/heap.html">Appendix I - Break the Heap</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="well">
+          <div style="color: red; height: 30px; font-size: 22px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; border-bottom: 2px solid #e2e2e2;">
+            Server status
+          </div>
+          <div style="color: #19F662; font-size: 16px; margin-top: 10px;">
+            [Server IP]: nsysu-ctf.no-ip.org</br>
+            [Server status]: OPEN
+          </div>
+        </div>
+    </div>
+{% end %}

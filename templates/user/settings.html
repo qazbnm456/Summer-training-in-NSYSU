@@ -1,0 +1,151 @@
+{% extends "../main.html" %}
+
+{% block title %}Settings{% end %}
+
+{% block content %}
+{% from models.Theme import Theme %}
+    <div class="container">
+        <h1>
+            <i class="fa fa-gears"></i>
+            Settings
+        </h1>
+        <br />
+        {% if errors is not None and len(errors) != 0 %}
+            {% for error in errors %}
+                <div class="alert alert-error">
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <h4 class="alert-heading">ERROR</h4>
+                    {{ error }}
+                </div>
+            {% end %}
+        {% end %}
+        {% if success is not None and len(success) != 0 %}
+            {% for message in success %}
+                <div class="alert alert-success">
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <h4 class="alert-heading">SUCCESS</h4>
+                    {{ message }}
+                </div>
+            {% end %}
+        {% end %}
+        <div class="row">
+            <div class="span6 well">
+                <form action="/user/settings/avatar" method="post" enctype="multipart/form-data">
+                    {% raw xsrf_form_html() %}
+                    <legend>Change Avatar</legend>
+                    <div class="control-group">
+                        <label class="control-label" for="avatar">Avatar File h250 x w500 (Max 1Mb)</label>
+                        <div class="controls">
+                            <input type="file" name="avatar" id="avatar" style="color:white;" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-primary" type="submit"> Change Avatar </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="span5 well">
+                <form action="/user/settings/theme" method="post">
+                    {% raw xsrf_form_html() %}
+                    <legend>Change Theme</legend>
+                    <div class="control-group">
+                        <label class="control-label" for="theme_uuid">Select a Theme</label>
+                        <div class="controls">
+                            <select name="theme_uuid">
+                                <option value="{{ current_theme.uuid }}">{{ current_theme.name }}</option>
+                                {% for theme in Theme.all() %}
+                                    {% if current_theme != theme %}
+                                        <option value="{{ theme.uuid }}">{{ theme.name }}</option>
+                                    {% end %}
+                                {% end %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-primary" type="submit"> Change Theme </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class"row">
+            <div class="well">
+                <form class="form-horizontal" action="/user/settings/password" method="post" autocomplete="off">
+                    {% raw xsrf_form_html() %}
+                    <legend>
+                        <i class="fa fa-lock"></i>
+                        Login Password
+                    </legend>
+                    <div class="control-group">
+                        <label class="control-label" for="old_password">Old Password</label>
+                        <div class="controls">
+                            <input required type="password" name="old_password" id="old_password" placeholder="Old Password" />
+                        </div>
+                    </div>
+                    <label class="control-label" for="new_password">New Password</label>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input required type="password" name="new_password" id="new_password" placeholder="New Password" />
+                        </div>
+                    </div>
+                    <label class="control-label" for="new_password2">Confirm New Password</label>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input required type="password" name="new_password2" id="new_password2" placeholder="Confirm Password" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-primary" type="submit"> Update Password </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="well">
+                <form class="form-horizontal" action="/user/settings/bank_password" method="post" autocomplete="off">
+                    {% raw xsrf_form_html() %}
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <legend>
+                                <i class="fa fa-lock"></i>
+                                Bank Password
+                            </legend>
+                            <div class="control-group">
+                                <label class="control-label" for="old-password">
+                                    Current Bank Password
+                                </label>
+                                <div class="controls">
+                                    <input required id="old-password" type="password" name="old_bpassword" placeholder="Old Password" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="new_bpassword">
+                                    New Bank Password
+                                </label>
+                                <div class="controls">
+                                    <input required type="password" name="new_bpassword" id="new_bpassword" placeholder="New Password" />
+                                </div>
+                            </div>
+                        </div>
+                        {% module Recaptcha() %}
+                    </div>
+                    <div class="row">
+                        <div class="control-group">
+                            <div class="controls">
+                                <button class="btn btn-primary" type="submit">
+                                    Update Bank Password
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% end %}

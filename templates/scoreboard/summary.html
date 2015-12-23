@@ -1,0 +1,53 @@
+{% extends "../main.html" %}
+
+{% block header %}
+<script src="/static/js/libs/highcharts-all.js"></script>
+<script src="/static/js/pages/scoreboard/summary.js"></script>
+{% end %}
+
+{% block title %}Scoreboard{% end %}
+
+{% block content %}
+{% from tornado.options import options %}
+<div class="row-fluid">
+    <h1 class="offset1">
+        <i class="fa fa-bar-chart-o"></i>
+        Scoreboard
+    </h1>
+    <br />
+</div>
+<div class="row-fluid">
+    <div class="well span5 offset1">
+        <div id="pie_flags" style="height:300px;">
+            <!-- Pie Chart Here -->
+        </div>
+    </div>
+    <div class="well span5">
+        <div id="pie_money" style="height:300px;">
+            <!-- Pie Chart Here -->
+        </div>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="well span10 offset1">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>Flags Captured</th>
+                    {% if options.use_bots %}
+                        <th>Botnet</th>
+                    {% end %}
+                    <th>Bank Account</th>
+                    <th>Game Level</th>
+                    <th><!-- Details --></th>
+                </tr>
+            </thead>
+            <tbody id="summary_table">
+                <!-- AJAX -->
+            </tbody>
+        </table>
+    </div>
+</div>
+{% end %}

@@ -1,0 +1,64 @@
+{% extends "../main.html" %}
+
+{% block title %}Home{% end %}
+
+{% block header %}
+<link href="/static/css/pages/user/home.css" rel="stylesheet" />
+{% end %}
+
+{% block content %}
+<div class="row-fluid">
+    <div class="span5">
+        <div class="row">
+            <div class="span11 offset1 well">
+                <h2>Welcome {{ user.handle }}</h2>
+                <center>
+                    <img src="/avatars/{{ user.avatar }}" class="img-polaroid" />
+                </center>
+                <hr>
+                {% if user.team is not None %}
+                <strong>Team:</strong> {{ user.team.name }} <br />
+                <strong>Current Level:</strong> {{ user.team.levels[-1].number }} <br />
+                <strong>Bank Account:</strong> ${{ user.team.money }} <br />
+                {% from tornado.options import options %}
+                {% if options.use_bots %}
+                <strong>Active Bots:</strong> {{ user.team.bot_count }} <br />
+                {% end %}
+                <strong>Flags Captured:</strong> {{ len(user.team.flags) }} <br />
+                {% else %}
+                <strong>You are not on a team</strong>
+                {% end %}
+            </div>
+        </div>
+    </div>
+    <div class="span5 offset1 well">
+        <h2 id="notifications-title">
+            <i class="fa fa-envelope-o"></i>
+            Notifications
+        </h2>
+        <h4 id="notifications">
+            <a href="/notifications/all">
+                See All &raquo;
+            </a>
+        </h4>
+        <hr>
+        {% for notify in user.notifications[-5:] %}
+        <div class="row">
+            <div class="span1 offset1">
+                {% if notify.icon_url is not None %}
+                    <img src="{{ notify.icon_url }}" />
+                {% end %}
+            </div>
+            <div class="span7">
+                <p>
+                    <strong>{{ notify.title }}</strong>
+                    {{ notify.created.strftime("%I:%M%p") }}
+                    <br />{{ notify.message }}
+                </p>
+            </div>
+        </div>
+        <hr>
+        {% end %}
+    </div>
+</div>
+{% end %}

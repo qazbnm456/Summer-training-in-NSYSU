@@ -1,0 +1,91 @@
+{% extends "../main.html" %}
+
+{% block title %}Teams{% end %}
+
+{% block content %}
+{% from models.Team import Team %}
+<div class="row-fluid">
+    <div class="span2" />
+        <ul class="nav nav-tabs nav-stacked affix well">
+            <center>
+                <strong>
+                    <i class="fa fa-group"></i>
+                    Teams
+                </strong>
+            </center>
+            <br />
+            {% for team in Team.all() %}
+                <li>
+                    <a href="#{{ team.uuid }}">
+                        <i class="icon-chevron-right"></i>
+                        &nbsp;&nbsp;{{ team.name }}
+                    </a>
+                </li>
+            {% end %}
+        </ul>
+    </div>
+    <div class="span10">
+        <h1>
+            <i class="fa fa-group"></i>
+            Teams
+        </h1>
+        <br />
+        {% for index, team in enumerate(Team.ranks()) %}
+            <div id="{{ team.uuid }}" class="well">
+                <h2 style="display:inline;">
+                    {% if index == 0 %}
+                        <i class="fa fa-trophy"></i> - {{ team.name }}
+                    {% else %}
+                        #{{ index + 1 }} - {{ team.name }}
+                    {% end %}
+                </h2>
+                <h4 style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;"{{ team.motto }}"</h4>
+                <hr />
+                <div class="row">
+                    <div class="container">
+                        {% for user in team.members %}
+                            <div class="span2">
+                                <center>
+                                    <h5>{{ user.handle }}</h5>
+                                    <img src="/avatars/{{ user.avatar }}" class="img-polaroid" />
+                                </center>
+                            </div>
+                        {% end %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <hr />
+                        {% if len(team.flags) %}
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Flag</th>
+                                        <th>Box</th>
+                                        <th>Game Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for f_index, flag in enumerate(team.flags) %}
+                                        <tr>
+                                            <td>{{ f_index + 1 }}</td>
+                                            <td>{{ flag.name }}</td>
+                                            <td>{{ flag.box.name }}</td>
+                                            <td>{{ flag.game_level.number }}</td>
+                                        </tr>
+                                    {% end %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <p>
+                                <h4 style="text-align:center;">No flags captured yet.</h4>
+                            </p>
+                        {% end %}
+                    </div>
+                </div>
+            </div>
+        {% end %}
+    </div>
+</div>
+{% end %}
